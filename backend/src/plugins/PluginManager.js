@@ -93,7 +93,7 @@ module.exports = class PluginManager {
 		} else if (licenseContainer.license.isValid && !PLUGIN_DIR) {
 			console.log('"CEDALO_MC_PLUGIN_DIR" is not set. Skipping loading of plugins');
 		} else {
-			console.error('Ignore loading plugins: no premium license provided or license not valid|',${process.env.CEDALO_MC_LICENSE_PATH));
+			console.error('Ignore loading plugins: no premium license provided or license not valid|',${process.env.CEDALO_MC_LICENSE_PATH});
 		}
 
 		this._plugins.forEach(plugin => {

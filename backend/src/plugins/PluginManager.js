@@ -67,6 +67,9 @@ module.exports = class PluginManager {
 					const enableAtNextStartup = (pluginConfiguration.enableAtNextStartup !== undefined) ? pluginConfiguration.enableAtNextStartup : true;
 
 					const { Plugin } = require(path.join(PLUGIN_DIR, pluginConfiguration.name));
+					console.log("PLUGIN_DIR");
+					console.log(PLUGIN_DIR);
+					console.log(pluginConfiguration.name);
 					const plugin = new Plugin({enableAtNextStartup});
 					if (
 						licenseContainer.license.features &&
@@ -93,7 +96,8 @@ module.exports = class PluginManager {
 		} else if (licenseContainer.license.isValid && !PLUGIN_DIR) {
 			console.log('"CEDALO_MC_PLUGIN_DIR" is not set. Skipping loading of plugins');
 		} else {
-			console.error('Ignore loading plugins: no premium license provided or license not valid|',${process.env.CEDALO_MC_LICENSE_PATH});
+			console.error('Ignore loading plugins: no premium license provided or license not valid');
+			console.log(${process.env.CEDALO_MC_LICENSE_PATH});
 		}
 
 		this._plugins.forEach(plugin => {
